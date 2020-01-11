@@ -1,4 +1,3 @@
-Discuss the purpose of this database in the context of the startup, Sparkify, and their analytical goals:
 
 ## Purpose
 The purpose of this database is to allow a Startup, Sparkify, to reach their analytical goals. A primary analytical goal for the company is to understand what songs users are listening to. The state of their data before building out this relational database consisted of two local directories of JSON data. 
