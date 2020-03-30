@@ -13,6 +13,7 @@ Confirm the data exists by using the Query Editor in AWS:
 
 ![Staging Events is populated!](/staging.png)
 
+
 ![Fact Table is populated!](/fact.png)
 
 
