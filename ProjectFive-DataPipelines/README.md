@@ -55,6 +55,7 @@ Had to think through which tasks could run in parallel vs. which needed to wait:
 Set it up using Airflow's `>>` and `set_downstream()` operators.
 
 ### Challenge 3: Idempotency
+(the property of an operation that produces the same result regardless of how many times it is performed)
 Dimension tables needed to support two modes:
 - **Append mode** - Add new records (for slowly changing dimensions)
 - **Truncate-insert mode** - Full refresh each run (what we used)
