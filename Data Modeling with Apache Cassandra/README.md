@@ -210,21 +210,18 @@ If we had a feature requiring sub-millisecond lookups with known queries (e.g., 
 **Product**: "Not initially"  
 **Me**: "Then Postgres is fine to start. If we hit performance issues at scale AND our queries stay simple, we can migrate to Cassandra later."
 
-**That's the PM skill** - not jumping to "cool" tech, but understanding when it's actually needed.
 
 ## Talking Points
 
-**"Tell me about a time you learned a completely new way of thinking"**
-
-"My Cassandra project forced me to unlearn SQL. In Postgres, you normalize data and use JOINs. In Cassandra, you denormalize everything and duplicate data across tables. 
+**My Cassandra project forced me to unlearn SQL** 
+In Postgres, you normalize data and use JOINs. In Cassandra, you denormalize everything and duplicate data across tables. 
 
 At first I thought it was wrong - violating every database principle I'd learned. But then I realized: those principles optimize for flexibility. Cassandra optimizes for speed on known queries. Neither is 'right' - they're optimizing for different goals.
 
 'What is this optimized for? Does that match what we need?' Stops me from suggesting 'best practices' that might not fit our use case.
 
-**"How do you decide which database to use?"**
 
-"Start with the access patterns:
+**Start with the access patterns**
 - Lots of JOINs and ad-hoc queries? → SQL (Postgres, MySQL)
 - Known queries, need consistent low latency? → Cassandra
 - Need ACID transactions? → SQL
@@ -233,11 +230,9 @@ At first I thought it was wrong - violating every database principle I'd learned
 
 My Cassandra project taught me that 'NoSQL' isn't better than SQL - it's just different. The skill is matching the tool to the requirement, not picking what's trendy."
 
-**"What's the biggest mistake you see teams make?"**
+Picking Cassandra because it's 'web scale' when they have 10,000 users and unknown query patterns. I learned this from my project: Cassandra requires discipline. You have to know your queries upfront and accept data duplication.
 
-"Picking Cassandra because it's 'web scale' when they have 10,000 users and unknown query patterns. I learned this from my project: Cassandra requires discipline. You have to know your queries upfront and accept data duplication.
-
-If you're still figuring out what questions you need to answer, start with Postgres. Add Cassandra when you have proven scale problems AND stable queries. Most teams never get there - and that's okay."
+If you're still figuring out what questions you need to answer, start with Postgres. Add Cassandra when you have proven scale problems AND stable queries.
 
 ## Project Structure
 
